@@ -86,12 +86,14 @@ Pretrained weights are distributed separately on the dataset hub (`weights_*.tar
 
 ## Citation
 
+If you find BadmintonSkill-23 useful in your research, please cite our paper:
+
 ```bibtex
-@inproceedings{badmintonskill23,
-  title   = {BadmintonSkill-23: ...},
-  author  = {...},
-  booktitle = {WACV},
-  year    = {2027}
+@inproceedings{zheng2027badmintonskill,
+  title     = {BadmintonSkill-23: A Multimodal Benchmark for Fine-grained Badminton Stroke Understanding with Professional Athletes},
+  author    = {Zheng, Naichuan and Liu, Chunlong and Xia, Hailun and Bao, Liwei and Sun, Zepeng},
+  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year      = {2027}
 }
 ```
 
