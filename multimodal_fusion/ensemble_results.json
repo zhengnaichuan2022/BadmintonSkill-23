@@ -1,0 +1,490 @@
+[
+  {
+    "protocol": "xsub",
+    "generated": "2026-06-29T17:48:10",
+    "fusion": "score_average",
+    "video_model": "r2plus1d_badminton_r34_kinetics",
+    "imu_model": "ispl_inception",
+    "n_test": 4500,
+    "single_modality": {
+      "video": {
+        "acc": 0.5595555555555556,
+        "macro_f1": 0.550811432954695
+      },
+      "imu": {
+        "acc": 0.5826666666666667,
+        "macro_f1": 0.5825306776115785
+      }
+    },
+    "sources": {
+      "video_scores": "${BADMINTONSKILL23_ROOT}/video/outputs/xsub/r2plus1d_badminton_r34_kinetics/test_scores.pkl",
+      "imu_scores": "${BADMINTONSKILL23_ROOT}/training/outputs/xsub_ispl_inception_full_w256/test_scores.pkl"
+    },
+    "best_multimodal": {
+      "model": "posec3d_joint",
+      "acc": 0.7788888888888889,
+      "macro_f1": 0.7813579975246531,
+      "fusion_kind": "4stream"
+    },
+    "models": [
+      {
+        "model": "stgcnpp",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.5984444444444444,
+          "macro_f1": 0.5992614761160001
+        },
+        "skeleton_fused": {
+          "acc": 0.6288888888888889,
+          "macro_f1": 0.631231202253575
+        },
+        "multimodal_3way": {
+          "acc": 0.7524444444444445,
+          "macro_f1": 0.7470823038164479
+        },
+        "multimodal": {
+          "acc": 0.7053333333333334,
+          "macro_f1": 0.7067543441619524
+        }
+      },
+      {
+        "model": "stgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.5813333333333334,
+          "macro_f1": 0.578952164914728
+        },
+        "skeleton_fused": {
+          "acc": 0.6384444444444445,
+          "macro_f1": 0.6421897912652098
+        },
+        "multimodal_3way": {
+          "acc": 0.7637777777777778,
+          "macro_f1": 0.7581649952287389
+        },
+        "multimodal": {
+          "acc": 0.7115555555555556,
+          "macro_f1": 0.7130108793703696
+        }
+      },
+      {
+        "model": "ctrgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.6344444444444445,
+          "macro_f1": 0.6336679326230041
+        },
+        "skeleton_fused": {
+          "acc": 0.6424444444444445,
+          "macro_f1": 0.6440030731499893
+        },
+        "multimodal_3way": {
+          "acc": 0.7691111111111111,
+          "macro_f1": 0.7627473354622957
+        },
+        "multimodal": {
+          "acc": 0.7184444444444444,
+          "macro_f1": 0.7183398222278472
+        }
+      },
+      {
+        "model": "msg3d",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.5886666666666667,
+          "macro_f1": 0.5810267656813107
+        },
+        "skeleton_fused": {
+          "acc": 0.6448888888888888,
+          "macro_f1": 0.6474334824653262
+        },
+        "multimodal_3way": {
+          "acc": 0.7686666666666667,
+          "macro_f1": 0.7644513694750248
+        },
+        "multimodal": {
+          "acc": 0.7228888888888889,
+          "macro_f1": 0.7238951554879601
+        }
+      },
+      {
+        "model": "aagcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.5895555555555556,
+          "macro_f1": 0.5890480855759095
+        },
+        "skeleton_fused": {
+          "acc": 0.6344444444444445,
+          "macro_f1": 0.6384872664831908
+        },
+        "multimodal_3way": {
+          "acc": 0.7595555555555555,
+          "macro_f1": 0.7547469752929415
+        },
+        "multimodal": {
+          "acc": 0.7213333333333334,
+          "macro_f1": 0.7229302377974128
+        }
+      },
+      {
+        "model": "posec3d_joint",
+        "skeleton_streams": [
+          "j",
+          "b"
+        ],
+        "fusion_kind": "4stream",
+        "n_streams": 4,
+        "skeleton_bj": {
+          "acc": 0.6855555555555556,
+          "macro_f1": 0.6886193730900957
+        },
+        "skeleton_fused": {
+          "acc": 0.6855555555555556,
+          "macro_f1": 0.6886193730900957
+        },
+        "multimodal_3way": {
+          "acc": 0.7906666666666666,
+          "macro_f1": 0.7902481818043028
+        },
+        "multimodal": {
+          "acc": 0.7788888888888889,
+          "macro_f1": 0.7813579975246531
+        }
+      },
+      {
+        "model": "protogcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.6164444444444445,
+          "macro_f1": 0.613300225148199
+        },
+        "skeleton_fused": {
+          "acc": 0.6784444444444444,
+          "macro_f1": 0.6797122776935528
+        },
+        "multimodal_3way": {
+          "acc": 0.7777777777777778,
+          "macro_f1": 0.771676620786419
+        },
+        "multimodal": {
+          "acc": 0.7493333333333333,
+          "macro_f1": 0.7488592654599132
+        }
+      },
+      {
+        "model": "blockgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.6211111111111111,
+          "macro_f1": 0.6161849729781976
+        },
+        "skeleton_fused": {
+          "acc": 0.6731111111111111,
+          "macro_f1": 0.6758449977939821
+        },
+        "multimodal_3way": {
+          "acc": 0.7248888888888889,
+          "macro_f1": 0.7268731942332333
+        },
+        "multimodal": {
+          "acc": 0.6868888888888889,
+          "macro_f1": 0.6894738267626231
+        }
+      }
+    ]
+  },
+  {
+    "protocol": "xacq",
+    "generated": "2026-06-29T17:48:11",
+    "fusion": "score_average",
+    "video_model": "r2plus1d_badminton_r34_kinetics",
+    "imu_model": "ispl_inception",
+    "n_test": 4404,
+    "single_modality": {
+      "video": {
+        "acc": 0.5962761126248864,
+        "macro_f1": 0.594815942423332
+      },
+      "imu": {
+        "acc": 0.6153496821071753,
+        "macro_f1": 0.6136041978628616
+      }
+    },
+    "sources": {
+      "video_scores": "${BADMINTONSKILL23_ROOT}/video/outputs/xacq/r2plus1d_badminton_r34_kinetics/test_scores.pkl",
+      "imu_scores": "${BADMINTONSKILL23_ROOT}/training/outputs/xacq_ispl_inception_full_w256/test_scores.pkl"
+    },
+    "best_multimodal": {
+      "model": "protogcn",
+      "acc": 0.8369663941871026,
+      "macro_f1": 0.8347351928061157,
+      "fusion_kind": "6stream"
+    },
+    "models": [
+      {
+        "model": "stgcnpp",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.6360127157129882,
+          "macro_f1": 0.6361723192420713
+        },
+        "skeleton_fused": {
+          "acc": 0.7195731153496822,
+          "macro_f1": 0.7183370225626237
+        },
+        "multimodal_3way": {
+          "acc": 0.8019981834695731,
+          "macro_f1": 0.7997097924383175
+        },
+        "multimodal": {
+          "acc": 0.8001816530426885,
+          "macro_f1": 0.7983169028243844
+        }
+      },
+      {
+        "model": "stgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.7243415077202543,
+          "macro_f1": 0.7250704138171423
+        },
+        "skeleton_fused": {
+          "acc": 0.7647593097184378,
+          "macro_f1": 0.7631106121247577
+        },
+        "multimodal_3way": {
+          "acc": 0.8228882833787466,
+          "macro_f1": 0.8208162899791048
+        },
+        "multimodal": {
+          "acc": 0.8303814713896458,
+          "macro_f1": 0.8283881019944523
+        }
+      },
+      {
+        "model": "ctrgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.7295640326975477,
+          "macro_f1": 0.7276906120641518
+        },
+        "skeleton_fused": {
+          "acc": 0.773841961852861,
+          "macro_f1": 0.7721482492701942
+        },
+        "multimodal_3way": {
+          "acc": 0.8199364214350591,
+          "macro_f1": 0.81746027939705
+        },
+        "multimodal": {
+          "acc": 0.8299273387829246,
+          "macro_f1": 0.8284504932221228
+        }
+      },
+      {
+        "model": "msg3d",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.6305631244323342,
+          "macro_f1": 0.6273961712201989
+        },
+        "skeleton_fused": {
+          "acc": 0.7175295186194369,
+          "macro_f1": 0.7145671215538749
+        },
+        "multimodal_3way": {
+          "acc": 0.8067665758401453,
+          "macro_f1": 0.8037880334489688
+        },
+        "multimodal": {
+          "acc": 0.7972297910990009,
+          "macro_f1": 0.7937172268584569
+        }
+      },
+      {
+        "model": "aagcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.7073115349682108,
+          "macro_f1": 0.7057419667247997
+        },
+        "skeleton_fused": {
+          "acc": 0.7549954586739328,
+          "macro_f1": 0.752707167019721
+        },
+        "multimodal_3way": {
+          "acc": 0.82811080835604,
+          "macro_f1": 0.8255856386811864
+        },
+        "multimodal": {
+          "acc": 0.8242506811989101,
+          "macro_f1": 0.822357743410473
+        }
+      },
+      {
+        "model": "posec3d_joint",
+        "skeleton_streams": [
+          "j",
+          "b"
+        ],
+        "fusion_kind": "4stream",
+        "n_streams": 4,
+        "skeleton_bj": {
+          "acc": 0.6471389645776566,
+          "macro_f1": 0.6470504689386685
+        },
+        "skeleton_fused": {
+          "acc": 0.6471389645776566,
+          "macro_f1": 0.6470504689386685
+        },
+        "multimodal_3way": {
+          "acc": 0.8206176203451407,
+          "macro_f1": 0.8185793727968048
+        },
+        "multimodal": {
+          "acc": 0.8199364214350591,
+          "macro_f1": 0.8182617260181917
+        }
+      },
+      {
+        "model": "protogcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.7029972752043597,
+          "macro_f1": 0.7005751371433099
+        },
+        "skeleton_fused": {
+          "acc": 0.776566757493188,
+          "macro_f1": 0.7744665684305633
+        },
+        "multimodal_3way": {
+          "acc": 0.8131244323342416,
+          "macro_f1": 0.8104045658614175
+        },
+        "multimodal": {
+          "acc": 0.8369663941871026,
+          "macro_f1": 0.8347351928061157
+        }
+      },
+      {
+        "model": "blockgcn",
+        "skeleton_streams": [
+          "j",
+          "b",
+          "jm",
+          "bm"
+        ],
+        "fusion_kind": "6stream",
+        "n_streams": 6,
+        "skeleton_bj": {
+          "acc": 0.7064032697547684,
+          "macro_f1": 0.7061781861371431
+        },
+        "skeleton_fused": {
+          "acc": 0.7554495912806539,
+          "macro_f1": 0.7541766297349072
+        },
+        "multimodal_3way": {
+          "acc": 0.8024523160762943,
+          "macro_f1": 0.8012750304051613
+        },
+        "multimodal": {
+          "acc": 0.7670299727520435,
+          "macro_f1": 0.7658723171543355
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+model = dict(
+    type="ActionFormer",
+    backbone=dict(
+        type="IMUInceptionBackbone",
+        in_channels=30,
+        out_channels=256,
+        network_depth=5,
+        filters_number=64,
+        max_kernel_size=68,
+        use_residual=True,
+        use_bottleneck=True,
+        stride=4,
+        freeze_backbone=False,
+    ),
+    projection=dict(
+        type="Conv1DTransformerProj",
+        in_channels=256,
+        out_channels=512,
+        arch=(2, 2, 5),
+        conv_cfg=dict(kernel_size=3, proj_pdrop=0.0),
+        norm_cfg=dict(type="LN"),
+        # Local window=9: compatible with max_seq_len=256
+        # (official AF uses 19 with max_seq_len=2304; 19 breaks 256-divisibility)
+        attn_cfg=dict(n_head=4, n_mha_win_size=9),
+        path_pdrop=0.1,
+        use_abs_pe=False,
+        max_seq_len=256,
+    ),
+    neck=dict(
+        type="FPNIdentity",
+        in_channels=512,
+        out_channels=512,
+        num_levels=6,
+    ),
+    rpn_head=dict(
+        type="ActionFormerHead",
+        num_classes=11,
+        in_channels=512,
+        feat_channels=512,
+        num_convs=2,
+        cls_prior_prob=0.01,
+        prior_generator=dict(
+            type="PointGenerator",
+            strides=[1, 2, 4, 8, 16, 32],
+            regression_range=[(0, 4), (4, 8), (8, 16), (16, 32), (32, 64), (64, 10000)],
+        ),
+        loss_normalizer=100,
+        loss_normalizer_momentum=0.9,
+        center_sample="radius",
+        center_sample_radius=1.5,
+        label_smoothing=0.0,
+        loss=dict(
+            cls_loss=dict(type="FocalLoss"),
+            reg_loss=dict(type="DIOULoss"),
+        ),
+    ),
+)

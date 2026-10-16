@@ -1,0 +1,35 @@
+model_id,benchmark_group,model_key,backbone_class,recognizer,head,skeleton_stream,feature_dim,protocols,code_path,config_example,bundled,notes
+SK001,pyskl_benchmark,aagcn,AAGCN,RecognizerGCN,GCNHead,joint,256,"xsub,xacq",pyskl/models/gcns/aagcn.py,config_examples/xsub/aagcn.py,yes,
+SK002,pyskl_benchmark,aagcn_b,AAGCN,RecognizerGCN,GCNHead,bone,256,"xsub,xacq",pyskl/gcns/aagcn.py,config_examples/xsub/aagcn_b.py,yes,
+SK003,pyskl_benchmark,aagcn_bm,AAGCN,RecognizerGCN,GCNHead,bone_motion,256,"xsub,xacq",pyskl/gcns/aagcn.py,config_examples/xsub/aagcn_bm.py,yes,
+SK004,pyskl_benchmark,aagcn_jm,AAGCN,RecognizerGCN,GCNHead,joint_motion,256,"xsub,xacq",pyskl/gcns/aagcn.py,config_examples/xsub/aagcn_jm.py,yes,
+SK005,blockgcn_ref,blockgcn,BlockGCN,RecognizerBlockGCN,GCNHead,joint,256,"xsub,xacq",blockgcn/blockgcn_net.py,config_examples/xsub/blockgcn.py,yes,
+SK006,blockgcn_ref,blockgcn_b,BlockGCN,RecognizerBlockGCN,GCNHead,bone,256,"xsub,xacq",blockgcn/blockgcn_net.py,config_examples/xsub/blockgcn_b.py,yes,
+SK007,blockgcn_ref,blockgcn_bm,BlockGCN,RecognizerBlockGCN,GCNHead,bone_motion,256,"xsub,xacq",blockgcn/blockgcn_net.py,config_examples/xsub/blockgcn_bm.py,yes,
+SK008,blockgcn_ref,blockgcn_jm,BlockGCN,RecognizerBlockGCN,GCNHead,joint_motion,256,"xsub,xacq",blockgcn/blockgcn_net.py,config_examples/xsub/blockgcn_jm.py,yes,
+SK009,pyskl_benchmark,ctrgcn,CTRGCN,RecognizerGCN,GCNHead,joint,256,"xsub,xacq",pyskl/gcns/ctrgcn.py,config_examples/xsub/ctrgcn.py,yes,
+SK010,pyskl_benchmark,ctrgcn_b,CTRGCN,RecognizerGCN,GCNHead,bone,256,"xsub,xacq",pyskl/gcns/ctrgcn.py,config_examples/xsub/ctrgcn_b.py,yes,
+SK011,pyskl_benchmark,ctrgcn_bm,CTRGCN,RecognizerGCN,GCNHead,bone_motion,256,"xsub,xacq",pyskl/gcns/ctrgcn.py,config_examples/xsub/ctrgcn_bm.py,yes,
+SK012,pyskl_benchmark,ctrgcn_jm,CTRGCN,RecognizerGCN,GCNHead,joint_motion,256,"xsub,xacq",pyskl/gcns/ctrgcn.py,config_examples/xsub/ctrgcn_jm.py,yes,
+SK013,pyskl_benchmark,msg3d,MSG3D,RecognizerGCN,GCNHead,joint,384,"xsub,xacq",pyskl/gcns/msg3d.py,config_examples/xsub/msg3d.py,yes,
+SK014,pyskl_benchmark,msg3d_b,MSG3D,RecognizerGCN,GCNHead,bone,384,"xsub,xacq",pyskl/gcns/msg3d.py,config_examples/xsub/msg3d_b.py,yes,
+SK015,pyskl_benchmark,msg3d_bm,MSG3D,RecognizerGCN,GCNHead,bone_motion,384,"xsub,xacq",pyskl/gcns/msg3d.py,config_examples/xsub/msg3d_bm.py,yes,
+SK016,pyskl_benchmark,msg3d_jm,MSG3D,RecognizerGCN,GCNHead,joint_motion,384,"xsub,xacq",pyskl/gcns/msg3d.py,config_examples/xsub/msg3d_jm.py,yes,
+SK017,pyskl_benchmark,posec3d_joint,ResNet3dSlowOnly,Recognizer3D,I3DHead,joint,512,"xsub,xacq",pyskl/cnns/resnet3d_slowonly.py,config_examples/xsub/posec3d_joint.py,yes,3D CNN on joint heatmaps
+SK018,pyskl_benchmark,posec3d_limb,ResNet3dSlowOnly,Recognizer3D,I3DHead,limb,512,"xsub,xacq",pyskl/cnns/resnet3d_slowonly.py,config_examples/xsub/posec3d_limb.py,yes,3D CNN on limb heatmaps
+SK019,pyskl_benchmark,protogcn,ProtoGCN,RecognizerProtoGCN,ProtoGCNHead,joint,256,"xsub,xacq",pyskl/gcns/protogcn_ext.py,config_examples/xsub/protogcn.py,yes,also protogcn/gcns/protogcn.py for native training
+SK020,pyskl_benchmark,protogcn_b,ProtoGCN,RecognizerProtoGCN,ProtoGCNHead,bone,256,"xsub,xacq",pyskl/gcns/protogcn_ext.py,config_examples/xsub/protogcn_b.py,yes,also protogcn/gcns/protogcn.py for native training
+SK021,pyskl_benchmark,protogcn_bm,ProtoGCN,RecognizerProtoGCN,ProtoGCNHead,bone_motion,256,"xsub,xacq",pyskl/gcns/protogcn_ext.py,config_examples/xsub/protogcn_bm.py,yes,also protogcn/gcns/protogcn.py for native training
+SK022,pyskl_benchmark,protogcn_jm,ProtoGCN,RecognizerProtoGCN,ProtoGCNHead,joint_motion,256,"xsub,xacq",pyskl/gcns/protogcn_ext.py,config_examples/xsub/protogcn_jm.py,yes,also protogcn/gcns/protogcn.py for native training
+SK023,pyskl_benchmark,stgcn,STGCN,RecognizerGCN,GCNHead,joint,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcn.py,yes,
+SK024,pyskl_benchmark,stgcn_b,STGCN,RecognizerGCN,GCNHead,bone,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcn_b.py,yes,
+SK025,pyskl_benchmark,stgcn_bm,STGCN,RecognizerGCN,GCNHead,bone_motion,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcn_bm.py,yes,
+SK026,pyskl_benchmark,stgcn_jm,STGCN,RecognizerGCN,GCNHead,joint_motion,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcn_jm.py,yes,
+SK027,pyskl_benchmark,stgcnpp,STGCN,RecognizerGCN,GCNHead,joint,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcnpp.py,yes,"STGCN++ flags: gcn_adaptive=init, tcn_type=mstcn"
+SK028,pyskl_benchmark,stgcnpp_b,STGCN,RecognizerGCN,GCNHead,bone,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcnpp_b.py,yes,"STGCN++ flags: gcn_adaptive=init, tcn_type=mstcn"
+SK029,pyskl_benchmark,stgcnpp_bm,STGCN,RecognizerGCN,GCNHead,bone_motion,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcnpp_bm.py,yes,"STGCN++ flags: gcn_adaptive=init, tcn_type=mstcn"
+SK030,pyskl_benchmark,stgcnpp_jm,STGCN,RecognizerGCN,GCNHead,joint_motion,256,"xsub,xacq",pyskl/gcns/stgcn.py,config_examples/xsub/stgcnpp_jm.py,yes,"STGCN++ flags: gcn_adaptive=init, tcn_type=mstcn"
+SK-EXTRA-01,pyskl_extra,sgn,SGN,RecognizerGCN,GCNHead,—,256,—,pyskl/models/gcns/sgn.py,—,yes,bundled; optional architecture
+SK-EXTRA-02,pyskl_extra,dgstgcn,DGSTGCN,RecognizerGCN,GCNHead,—,256,—,pyskl/models/gcns/dgstgcn.py,—,yes,bundled; optional architecture
+SK-NATIVE-01,native_training,protogcn_native,ProtoGCN,RecognizerGCN,BaseHead,—,256,"xsub,xacq",protogcn/models/gcns/protogcn.py,—,yes,150-epoch standalone ProtoGCN trainer
+SK-NATIVE-02,native_training,blockgcn_native,BlockGCN,BlockGCN.Model,—,—,256,"xsub,xacq",blockgcn/blockgcn_net.py,—,yes,native BlockGCN trainer compatible

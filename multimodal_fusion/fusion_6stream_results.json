@@ -1,0 +1,63 @@
+[
+  {
+    "protocol": "xsub",
+    "generated": "2026-06-29T10:49:23",
+    "fusion": "score_average",
+    "streams": {
+      "skeleton_model": "protogcn",
+      "skeleton_streams": [
+        "j",
+        "b",
+        "jm",
+        "bm"
+      ],
+      "video_model": "r2plus1d_badminton_r34_kinetics",
+      "imu_model": "ispl_inception"
+    },
+    "single_stream": {
+      "imu": {
+        "acc": 0.5826666666666667,
+        "macro_f1": 0.5825306776115785
+      },
+      "video": {
+        "acc": 0.08822222222222222,
+        "macro_f1": 0.09090909090909091
+      },
+      "sk_j": {
+        "acc": 0.5346666666666666,
+        "macro_f1": 0.5297761425528242
+      },
+      "sk_b": {
+        "acc": 0.5955555555555555,
+        "macro_f1": 0.5930314337095314
+      },
+      "sk_jm": {
+        "acc": 0.6302222222222222,
+        "macro_f1": 0.6257223835866671
+      },
+      "sk_bm": {
+        "acc": 0.5966666666666667,
+        "macro_f1": 0.5962011564946716
+      }
+    },
+    "skeleton_4stream": {
+      "acc": 0.6784444444444444,
+      "macro_f1": 0.6797122776935528
+    },
+    "fusion_6stream": {
+      "acc": 0.6997777777777778,
+      "macro_f1": 0.7002601919576548,
+      "n_test": 4500
+    },
+    "sources": {
+      "imu_scores": "${BADMINTONSKILL23_ROOT}/training/outputs/xsub_ispl_inception_full_w256/test_scores.pkl",
+      "video_scores": "${BADMINTONSKILL23_ROOT}/video/outputs/xsub/r2plus1d_badminton_r34_kinetics/test_scores.pkl",
+      "skeleton_scores": [
+        "${BADMINTONSKILL23_ROOT}/skeleton/outputs/xsub/protogcn/result.pkl",
+        "${BADMINTONSKILL23_ROOT}/skeleton/outputs/xsub/protogcn_b/result.pkl",
+        "${BADMINTONSKILL23_ROOT}/skeleton/outputs/xsub/protogcn_jm/result.pkl",
+        "${BADMINTONSKILL23_ROOT}/skeleton/outputs/xsub/protogcn_bm/result.pkl"
+      ]
+    }
+  }
+]

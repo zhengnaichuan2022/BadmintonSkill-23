@@ -1,0 +1,51 @@
+# BadmintonSkill-23 multimodal TAD: RGB + Skeleton 4-stream + IMU5
+
+task: temporal_action_detection
+modality: multimodal
+protocol: xsub  # or xacq
+
+modalities:
+  rgb:
+    extractor: r2plus1d
+    feature_dim: 512
+    path: example/BadmintonSkill23/tad/features/rgb/r2plus1d_{protocol}_stride4/
+  skeleton:
+    extractor: protogcn
+    streams: [j, b, jm, bm]
+    feature_dim_per_stream: 384
+    paths:
+      - example/BadmintonSkill23/tad/features/skeleton/protogcn_j_{protocol}_stride4/
+      - example/BadmintonSkill23/tad/features/skeleton/protogcn_b_{protocol}_stride4/
+      - example/BadmintonSkill23/tad/features/skeleton/protogcn_jm_{protocol}_stride4/
+      - example/BadmintonSkill23/tad/features/skeleton/protogcn_bm_{protocol}_stride4/
+  imu:
+    extractor: inception5
+    nodes: 5
+    feature_dim: 256
+    path: example/BadmintonSkill23/tad/features/imu/inception5_{protocol}_stride4/
+
+fusion:
+  method: feature_concatenation
+  input_dim: 2304  # 512 + 4×384 + 256
+  feature_stride: 4
+  window_size: 256
+
+dataset_class: BadmintonSkill23SlidingDataset
+
+detectors:
+  - actionformer
+  - tridet
+  - gtad
+  - temporalmaxer
+
+evaluation:
+  metric: mAP
+  tiou_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+
+config_examples:
+  xsub_actionformer: benchmark/models/tad/config_examples/rgb_skel_4stream_imu5_xsub_actionformer.py
+  imu5_e2e: benchmark/models/tad/config_examples/actionformer_imu5_e2e_xsub.py
+
+environment:
+  BADMINTONSKILL23_ROOT: example/BadmintonSkill23
+  BADMINTONSKILL23_EXP_ROOT: example/experiments/tad

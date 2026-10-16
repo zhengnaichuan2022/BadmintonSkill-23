@@ -1,0 +1,27 @@
+# BadmintonSkill-23 TAD benchmark reference (example paths only)
+
+task: temporal_action_detection
+modality: rgb_features
+protocol: xsub  # or xacq
+
+framework: opentad  # models bundled under benchmark/models/tad/
+
+data:
+  annotation: example/BadmintonSkill23/tad/annotations/xsub/anno.json
+  features: example/BadmintonSkill23/tad/features/rgb/r2plus1d_xsub_stride4/
+  feature_dim: 512
+  feature_stride: 4
+  window_size: 256
+
+dataset_class: BadmintonSkill23SlidingDataset
+
+evaluation:
+  metric: mAP
+  tiou_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+  subset: testing
+
+config_template: benchmark/models/tad/config_examples/rgb_xsub_actionformer.py
+
+environment:
+  BADMINTONSKILL23_ROOT: example/BadmintonSkill23
+  BADMINTONSKILL23_EXP_ROOT: example/experiments/tad

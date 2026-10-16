@@ -1,0 +1,37 @@
+{
+  "protocol": "xsub",
+  "pickle": "${BADMINTONSKILL23_ROOT}/skeleton/annotations/xsub/beiyu.pkl",
+  "class_names": [
+    "forehand_net",
+    "forehand_drop",
+    "forehand_clear",
+    "forehand_drive",
+    "forehand_lift",
+    "forehand_smash",
+    "backhand_net",
+    "backhand_drop",
+    "backhand_clear",
+    "backhand_drive",
+    "backhand_lift"
+  ],
+  "counts": {
+    "train": 11907,
+    "val": 1640,
+    "test": 4500
+  },
+  "skipped": {},
+  "clip_stats": {
+    "instances": 18047,
+    "multi_person_frames": 3083,
+    "cleaned_frames": 4670
+  },
+  "keypoint_layout": "coco-17",
+  "source": "skeleton/cleaned",
+  "views": [
+    "single",
+    "front",
+    "rear"
+  ],
+  "split_assignment": "video/dataset_utils.assign_subset (same as IMU/video)",
+  "aligned_with": "${BADMINTONSKILL23_ROOT}/video/annotations/xsub/manifest.json"
+}

@@ -1,0 +1,35 @@
+# BadmintonSkill-23 IMU classification benchmark
+
+task: classification
+modality: imu
+protocol: xsub  # or xacq
+
+data:
+  dataset_root: example/BadmintonSkill23
+  instances_csv: example/BadmintonSkill23/metadata/instances.csv
+  imu_root: example/BadmintonSkill23/imu
+  sensors: [Sensor06, Sensor07, Sensor08, Sensor09, Sensor10]
+  channels_per_node: 6
+  input_shape: [T, 30]
+  sample_rate_hz: 120
+  window_size: 256
+
+splits:
+  source: example/BadmintonSkill23/metadata/splits/xsub_train_test.json
+  val_subjects: [S003, S010]
+
+models_code: benchmark/models/classification/imu/models/
+registry: benchmark/models/classification/imu/models/registry.py
+
+models:
+  - ispl_inception
+  - resnet_se
+  - r_tsf_net
+  # ... 13 total — see registry.py
+
+metrics:
+  - top1_accuracy
+  - mean_class_accuracy
+
+environment:
+  BADMINTONSKILL23_ROOT: example/BadmintonSkill23

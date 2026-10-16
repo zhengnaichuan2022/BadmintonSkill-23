@@ -1,0 +1,55 @@
+# BlockGCN native recipe on Beiyu (xsub): 150 epochs, NTU-style lr schedule
+# base_lr=0.05, step decay [120,140] (scaled from NTU 140-epoch [110,120])
+
+work_dir: ../outputs/xsub/blockgcn_native
+
+feeder: feeders.feeder_beiyu.Feeder
+train_feeder_args:
+  data_path: ../data/blockgcn/beiyu_xsub.npz
+  split: train
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: 100
+  normalization: False
+  random_rot: True
+  p_interval: [0.5, 1]
+  vel: False
+  bone: False
+  num_joint: 17
+  center_joint: 0
+
+test_feeder_args:
+  data_path: ../data/blockgcn/beiyu_xsub.npz
+  split: test
+  window_size: 100
+  p_interval: [0.95]
+  vel: False
+  bone: False
+  debug: False
+  num_joint: 17
+  center_joint: 0
+
+model: model.BlockGCN.Model
+model_args:
+  num_class: 11
+  num_point: 17
+  num_person: 2
+  graph: graph.coco.Graph
+  window_size: 100
+  graph_args:
+    labeling_mode: spatial
+
+weight_decay: 0.0004
+base_lr: 0.05
+lr_decay_rate: 0.1
+step: [120, 140]
+warm_up_epoch: 5
+
+device: [0]
+batch_size: 32
+test_batch_size: 32
+num_epoch: 150
+nesterov: True
+save_epoch: 0

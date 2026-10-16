@@ -1,0 +1,11 @@
+forehand_net
+forehand_drop
+forehand_clear
+forehand_drive
+forehand_lift
+forehand_smash
+backhand_net
+backhand_drop
+backhand_clear
+backhand_drive
+backhand_lift
